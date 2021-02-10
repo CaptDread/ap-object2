@@ -14,6 +14,7 @@ const gulp = require('gulp'),
 	gulpFn = require('gulp-fn'),
 	axios = require('axios'),
 	fs = require('fs'),
+	path = require('path'),
 	browserSync = require('browser-sync').create()
 
 
@@ -96,7 +97,7 @@ gulp.task('sass-compile', (done) => {
 
 // this task compiles modern (es6+/es2015+) JavaScript files in src and recompiles them
 // into older, more broadly compatible (ES5) JavaScript files in dist
-const filesForJsCompilation = ['src/js/**/*.js']
+const filesForJsCompilation = [path.join('src', 'js', `**`, `*.js`)]
 gulp.task('js-compile', (done) => {
 	return gulp.src(filesForJsCompilation) // watch these files
 		// .pipe(eslint()) // uncomment for full JS styleguide/error checking
@@ -108,7 +109,7 @@ gulp.task('js-compile', (done) => {
 			console.warn('[JS Babel Error] '.red + err.message);
 		})
 		// .pipe(concat('./app.js')) // join all the js files into one // uncomment this line if you want to concatenate all JS files into one.
-		.pipe(sourcemaps.write('./')) // put the sourcemaps with the js files
+		.pipe(sourcemaps.write(path.join(`.`))) // put the sourcemaps with the js files
 		.pipe(gulp.dest((file) => file.base.replace(file.path.sep+'src', file.path.sep+'dist'))) // put the js files here.
 		.pipe(gulpFn(function (file) {
 			if (file.path.indexOf('.js.map') === -1) {
