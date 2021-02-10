@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="x-ua-compatible" content="ie=edge" />
+		<title>¯\_(ツ)_/¯</title>
+		<meta name="description" content="" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		
+		<link rel="stylesheet" href="src/scss/main.css" />
+
+		
+	</head>
+
+	<body>
+		<div class="floating-box">
+			<!-- <a class="logoLink" href="">
+				<img class="dreadlogo" src="src/js/dreadScript/logoOpen.png">
+			</a> -->
+			<div class="foreground">
+				<h1>Hello World!</h1>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip <span class="tooltip" data-tooltip="hiya, this is my first tooltip" data-color="red">dummy</span> ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur <span class="tooltip" data-tooltip="hiya, this is my second tooltip"> dopius maximus</span> sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est <span class="tooltip" data-tooltip="And this is my third tooltip!!" data-color="green">laborum</span>.</p>
+				<form>
+					<p>
+						<strong>Requirements:</strong>
+						<ul>
+							<li>Email: needs to contain an @ symbol</li>
+						</ul>
+					</p>
+					<p>
+						<label>Name</label>
+						<input id="inpName" name="name" data-validate="full-name" data-limit="25" data-warning-color="yellow" data-message-color="red" />
+						<span class="error"></span>
+					</p>
+					<p>
+						<label>Phone Number</label>
+						<input id="inpPhone" name="phone" data-validate="phone-number" data-limit="10"></input>
+						<span class="error"></span>
+
+					</p>
+					<p>
+						<label>Email</label>
+						<input name="email" data-validate="email min-length"/>
+						<span class="error"></span>
+					</p>
+					<p>
+						<label>Message</label>
+						<textarea id="inpMess" name="message" data-limit="200"></textarea>
+						<span class="error"></span>
+
+					</p>
+				</form>
+			</div>
+			<div class="background"></div>
+		</div>
+
+		<script src="src/js/base-validator.js"></script>
+		<script src="src/js/email-validator.js"></script>
+		<script src="src/js/full-name-validator.js"></script>
+		<script src="src/js/phone-validator.js"></script>
+		<script src="src/js/main.js"></script>
+	</body>
+</html>
