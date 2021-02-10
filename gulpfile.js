@@ -80,7 +80,7 @@ gulp.task('sass-compile', (done) => {
 		}))
 		.pipe(autoprefixer())
 		.pipe(sourcemaps.write('./')) // put the sourcemaps with the css files
-		.pipe(gulp.dest((file) => file.base.replace('/src', '/dist').replace('/scss', '/css'))) // put the css files here.
+		.pipe(gulp.dest((file) => file.base.replace(file.path.sep+'src', file.path.sep+'dist').replace(file.path.sep+'scss', file.path.sep+'css'))) // put the css files here.
 		.pipe(browserSync.stream()) // tell browsersync to send over the changes
 		.pipe(gulpFn(function (file) {
 			if (file.path.indexOf('.css.map') === -1) {
@@ -109,7 +109,7 @@ gulp.task('js-compile', (done) => {
 		})
 		// .pipe(concat('./app.js')) // join all the js files into one // uncomment this line if you want to concatenate all JS files into one.
 		.pipe(sourcemaps.write('./')) // put the sourcemaps with the js files
-		.pipe(gulp.dest((file) => file.base.replace('/src', '/dist'))) // put the js files here.
+		.pipe(gulp.dest((file) => file.base.replace(file.path.sep+'src', file.path.sep+'dist'))) // put the js files here.
 		.pipe(gulpFn(function (file) {
 			if (file.path.indexOf('.js.map') === -1) {
 				console.log("JS generated: ".cyan);

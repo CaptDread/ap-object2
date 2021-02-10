@@ -12,6 +12,8 @@ class BaseValidator{
     setup() {
 
         this.element.addEventListener(`change`, this.handleChange)
+
+    
     }
 
     handleChange = (evt) => {
